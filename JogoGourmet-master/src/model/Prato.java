@@ -2,7 +2,7 @@ package model;
 
 /**
  *
- * @author jonat_000
+ * @author duda
  */
 public class Prato {
     
