@@ -1,0 +1,438 @@
+﻿A)
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Pais {
+    private String nome;
+    private String capital;
+    private double dimensaoKm2;
+    private List<String> fronteiras;
+
+
+    // Construtor que inicializa o nome, capital e a dimensão do país
+    public Pais(String nome, String capital, double dimensaoKm2) {
+        this.nome = nome;
+        this.capital = capital;
+        this.dimensaoKm2 = dimensaoKm2;
+        this.fronteiras = new ArrayList<>();
+    }
+
+
+    // Métodos getter e setter para o nome do país
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    // Métodos getter e setter para o nome da capital
+    public String getCapital() {
+        return capital;
+    }
+
+
+    public void setCapital(String capital) {
+        this.capital = capital;
+    }
+
+
+    // Métodos getter e setter para a dimensão do país em Km2
+    public double getDimensaoKm2() {
+        return dimensaoKm2;
+    }
+
+
+    public void setDimensaoKm2(double dimensaoKm2) {
+        this.dimensaoKm2 = dimensaoKm2;
+    }
+
+
+    // Método para adicionar países fronteiriços
+    public void addFronteira(String paisFronteira) {
+        fronteiras.add(paisFronteira);
+    }
+
+
+    // Método para exibir informações do país
+    public void exibirInformacoes() {
+        System.out.println("Nome do País: " + nome);
+        System.out.println("Capital: " + capital);
+        System.out.println("Dimensão em Km2: " + dimensaoKm2);
+        System.out.println("Países Fronteiriços:");
+        for (String fronteira : fronteiras) {
+            System.out.println("- " + fronteira);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        // Criando um objeto da classe Pais
+        Pais brasil = new Pais("Brasil", "Brasília", 8516000.0);
+
+
+        // Adicionando países fronteiriços
+        brasil.addFronteira("Argentina");
+        brasil.addFronteira("Uruguai");
+        brasil.addFronteira("Paraguai");
+        brasil.addFronteira("Bolívia");
+        brasil.addFronteira("Peru");
+        brasil.addFronteira("Colômbia");
+        brasil.addFronteira("Venezuela");
+        brasil.addFronteira("Guiana");
+        brasil.addFronteira("Suriname");
+        brasil.addFronteira("Guiana Francesa");
+
+
+        // Exibindo informações do país
+        brasil.exibirInformacoes();
+    }
+}
+
+
+
+
+
+
+
+
+B)
+public class Pais {
+    private String nome;
+    private String capital;
+    private double dimensaoKm2;
+    private List<String> fronteiras;
+
+
+    public Pais(String nome, String capital, double dimensaoKm2) {
+        this.nome = nome;
+        this.capital = capital;
+        this.dimensaoKm2 = dimensaoKm2;
+        this.fronteiras = new ArrayList<>();
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public String getCapital() {
+        return capital;
+    }
+
+
+    public void setCapital(String capital) {
+        this.capital = capital;
+    }
+
+
+    public double getDimensaoKm2() {
+        return dimensaoKm2;
+    }
+
+
+    public void setDimensaoKm2(double dimensaoKm2) {
+        this.dimensaoKm2 = dimensaoKm2;
+    }
+
+
+    public void addFronteira(String paisFronteira) {
+        fronteiras.add(paisFronteira);
+    }
+
+
+    public void exibirInformacoes() {
+        System.out.println("Nome do País: " + nome);
+        System.out.println("Capital: " + capital);
+        System.out.println("Dimensão em Km2: " + dimensaoKm2);
+        System.out.println("Países Fronteiriços:");
+        for (String fronteira : fronteiras) {
+            System.out.println("- " + fronteira);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Pais brasil = new Pais("Brasil", "Brasília", 8516000.0);
+        brasil.addFronteira("Argentina");
+        brasil.addFronteira("Uruguai");
+        brasil.addFronteira("Paraguai");
+
+
+        System.out.println("Nome do País: " + brasil.getNome());
+        System.out.println("Capital: " + brasil.getCapital());
+        System.out.println("Dimensão em Km2: " + brasil.getDimensaoKm2());
+    }
+}
+
+
+
+
+C)
+
+
+Copiar código
+public class Pais {
+    private String nome;
+    private String capital;
+    private double dimensaoKm2;
+    private List<String> fronteiras;
+
+
+    public Pais(String nome, String capital, double dimensaoKm2) {
+        this.nome = nome;
+        this.capital = capital;
+        this.dimensaoKm2 = dimensaoKm2;
+        this.fronteiras = new ArrayList<>();
+    }
+
+
+    // Outros métodos da classe...
+
+
+    // Método equals para verificar se dois países são iguais
+    public boolean equals(final Pais outro) {
+        if (outro == null) return false;
+        if (this == outro) return true;
+        return this.nome.equals(outro.getNome()) && this.capital.equals(outro.getCapital());
+    }
+
+
+    public static void main(String[] args) {
+        Pais brasil1 = new Pais("Brasil", "Brasília", 8516000.0);
+        Pais brasil2 = new Pais("Brasil", "Brasília", 8516000.0);
+        Pais argentina = new Pais("Argentina", "Buenos Aires", 2780400.0);
+
+
+        System.out.println("Brasil1 é igual a Brasil2? " + brasil1.equals(brasil2)); // Deve imprimir true
+        System.out.println("Brasil1 é igual a Argentina? " + brasil1.equals(argentina)); // Deve imprimir false
+    }
+}
+
+
+
+
+D)
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Pais {
+    private String nome;
+    private String capital;
+    private double dimensaoKm2;
+    private List<String> fronteiras;
+
+
+    public Pais(String nome, String capital, double dimensaoKm2) {
+        this.nome = nome;
+        this.capital = capital;
+        this.dimensaoKm2 = dimensaoKm2;
+        this.fronteiras = new ArrayList<>();
+    }
+
+
+    // Outros métodos da classe...
+
+
+    // Método para definir quais países fazem fronteira com este país
+    public void definirFronteiras(List<Pais> paises) {
+        for (Pais pais : paises) {
+            if (!pais.equals(this)) { // Verifica se o país não é o próprio país
+                fronteiras.add(pais.getNome());
+            }
+        }
+    }
+
+
+    // Método para exibir informações do país, incluindo as fronteiras
+    public void exibirInformacoes() {
+        System.out.println("Nome do País: " + nome);
+        System.out.println("Capital: " + capital);
+        System.out.println("Dimensão em Km2: " + dimensaoKm2);
+        System.out.println("Países Fronteiriços:");
+        for (String fronteira : fronteiras) {
+            System.out.println("- " + fronteira);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Pais brasil = new Pais("Brasil", "Brasília", 8516000.0);
+        Pais argentina = new Pais("Argentina", "Buenos Aires", 2780400.0);
+        Pais paraguai = new Pais("Paraguai", "Assunção", 406752.0);
+        Pais uruguai = new Pais("Uruguai", "Montevidéu", 176215.0);
+
+
+        List<Pais> paisesFronteiraBrasil = new ArrayList<>();
+        paisesFronteiraBrasil.add(argentina);
+        paisesFronteiraBrasil.add(paraguai);
+        paisesFronteiraBrasil.add(uruguai);
+
+
+        brasil.definirFronteiras(paisesFronteiraBrasil);
+
+
+        brasil.exibirInformacoes();
+    }
+}
+
+
+
+
+E)
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Pais {
+    private String nome;
+    private String capital;
+    private double dimensaoKm2;
+    private List<String> fronteiras;
+
+
+    public Pais(String nome, String capital, double dimensaoKm2) {
+        this.nome = nome;
+        this.capital = capital;
+        this.dimensaoKm2 = dimensaoKm2;
+        this.fronteiras = new ArrayList<>();
+    }
+
+
+    // Outros métodos da classe...
+
+
+    // Método para definir quais países fazem fronteira com este país
+    public void definirFronteiras(List<Pais> paises) {
+        for (Pais pais : paises) {
+            if (!pais.equals(this)) { // Verifica se o país não é o próprio país
+                fronteiras.add(pais.getNome());
+            }
+        }
+    }
+
+
+    // Método para exibir informações do país, incluindo as fronteiras
+    public void exibirInformacoes() {
+        System.out.println("Nome do País: " + nome);
+        System.out.println("Capital: " + capital);
+        System.out.println("Dimensão em Km2: " + dimensaoKm2);
+        System.out.println("Países Fronteiriços:");
+        for (String fronteira : fronteiras) {
+            System.out.println("- " + fronteira);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Pais brasil = new Pais("Brasil", "Brasília", 8516000.0);
+        Pais argentina = new Pais("Argentina", "Buenos Aires", 2780400.0);
+        Pais paraguai = new Pais("Paraguai", "Assunção", 406752.0);
+        Pais uruguai = new Pais("Uruguai", "Montevidéu", 176215.0);
+
+
+        List<Pais> paisesFronteiraBrasil = new ArrayList<>();
+        paisesFronteiraBrasil.add(argentina);
+        paisesFronteiraBrasil.add(paraguai);
+        paisesFronteiraBrasil.add(uruguai);
+
+
+        brasil.definirFronteiras(paisesFronteiraBrasil);
+
+
+        brasil.exibirInformacoes();
+    }
+}
+
+
+F)
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Pais {
+    private String nome;
+    private String capital;
+    private double dimensaoKm2;
+    private List<String> fronteiras;
+
+
+    public Pais(String nome, String capital, double dimensaoKm2) {
+        this.nome = nome;
+        this.capital = capital;
+        this.dimensaoKm2 = dimensaoKm2;
+        this.fronteiras = new ArrayList<>();
+    }
+
+
+    // Outros métodos da classe...
+
+
+    // Método para definir quais países fazem fronteira com este país
+    public void definirFronteiras(List<Pais> paises) {
+        for (Pais pais : paises) {
+            if (!pais.equals(this)) { // Verifica se o país não é o próprio país
+                fronteiras.add(pais.getNome());
+            }
+        }
+    }
+
+
+    // Método para obter a lista de vizinhos comuns aos dois países
+    public List<String> vizinhosComuns(Pais outroPais) {
+        List<String> vizinhosComuns = new ArrayList<>();
+        for (String fronteira : fronteiras) {
+            if (outroPais.fronteiras.contains(fronteira)) {
+                vizinhosComuns.add(fronteira);
+            }
+        }
+        return vizinhosComuns;
+    }
+
+
+    // Método para exibir informações do país, incluindo as fronteiras
+    public void exibirInformacoes() {
+        System.out.println("Nome do País: " + nome);
+        System.out.println("Capital: " + capital);
+        System.out.println("Dimensão em Km2: " + dimensaoKm2);
+        System.out.println("Países Fronteiriços:");
+        for (String fronteira : fronteiras) {
+            System.out.println("- " + fronteira);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Pais brasil = new Pais("Brasil", "Brasília", 8516000.0);
+        Pais argentina = new Pais("Argentina", "Buenos Aires", 2780400.0);
+        Pais paraguai = new Pais("Paraguai", "Assunção", 406752.0);
+        Pais uruguai = new Pais("Uruguai", "Montevidéu", 176215.0);
+
+
+        List<Pais> paisesFronteiraBrasil = new ArrayList<>();
+        paisesFronteiraBrasil.add(argentina);
+        paisesFronteiraBrasil.add(paraguai);
+        paisesFronteiraBrasil.add(uruguai);
+
+
+        brasil.definirFronteiras(paisesFronteiraBrasil);
+
+
+        List<String> vizinhosComuns = brasil.vizinhosComuns(argentina);
+        System.out.println("Vizinhos comuns entre Brasil e Argentina:");
+        for (String vizinho : vizinhosComuns) {
+            System.out.println("- " + vizinho);
+        }
+    }
+}

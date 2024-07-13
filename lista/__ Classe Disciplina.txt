@@ -1,0 +1,174 @@
+﻿import java.util.ArrayList;
+import java.util.List;
+
+
+// Classe Disciplina
+class Disciplina {
+    private String nome;
+    private String codigo;
+
+
+    // Construtor da classe Disciplina
+    public Disciplina(String nome, String codigo) {
+        this.nome = nome;
+        this.codigo = codigo;
+    }
+
+
+    // Métodos getter e setter para os atributos
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+
+    // Método para exibir informações da disciplina
+    public void exibirInformacoes() {
+        System.out.println("Nome da Disciplina: " + nome);
+        System.out.println("Código da Disciplina: " + codigo);
+    }
+}
+
+
+// Classe Pessoa
+class Pessoa {
+    private String cpf;
+    private String nome;
+    private int idade;
+
+
+    // Construtor da classe Pessoa
+    public Pessoa(String cpf, String nome, int idade) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+
+    // Métodos getter e setter para os atributos
+    public String getCpf() {
+        return cpf;
+    }
+
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public int getIdade() {
+        return idade;
+    }
+
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+
+    // Método para exibir informações da pessoa
+    public void exibirInformacoes() {
+        System.out.println("CPF: " + cpf);
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+    }
+}
+
+
+// Classe Aluno que herda de Pessoa
+class Aluno extends Pessoa {
+    private String curso;
+    private List<Disciplina> disciplinas;
+
+
+    // Construtor da classe Aluno
+    public Aluno(String cpf, String nome, int idade, String curso) {
+        super(cpf, nome, idade);
+        this.curso = curso;
+        this.disciplinas = new ArrayList<>();
+    }
+
+
+    // Métodos getter e setter para os atributos
+    public String getCurso() {
+        return curso;
+    }
+
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+
+    // Método para adicionar uma disciplina
+    public void adicionarDisciplina(Disciplina disciplina) {
+        disciplinas.add(disciplina);
+    }
+
+
+    // Método para exibir informações do aluno
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("Curso: " + curso);
+        System.out.println("Disciplinas:");
+        for (Disciplina disciplina : disciplinas) {
+            disciplina.exibirInformacoes();
+        }
+    }
+}
+
+
+// Classe para testar as classes Pessoa, Aluno e Disciplina
+public class Main {
+    public static void main(String[] args) {
+        // Criando um objeto da classe Pessoa
+        Pessoa pessoa = new Pessoa("12345678900", "João Silva", 30);
+        System.out.println("Informações da Pessoa:");
+        pessoa.exibirInformacoes();
+
+
+        // Criando objetos da classe Disciplina
+        Disciplina disciplina1 = new Disciplina("Matemática", "MAT101");
+        Disciplina disciplina2 = new Disciplina("Física", "FIS102");
+
+
+        // Criando um objeto da classe Aluno
+        Aluno aluno = new Aluno("09876543211", "Maria Oliveira", 20, "Engenharia");
+        aluno.adicionarDisciplina(disciplina1);
+        aluno.adicionarDisciplina(disciplina2);
+
+
+        System.out.println("\nInformações do Aluno:");
+        aluno.exibirInformacoes();
+    }
+}

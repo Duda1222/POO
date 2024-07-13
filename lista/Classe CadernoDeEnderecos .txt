@@ -1,0 +1,179 @@
+﻿// Classe Data para representar a data de aniversário
+class Data {
+    private int dia;
+    private int mes;
+    private int ano;
+
+
+    // Construtor da classe Data
+    public Data(int dia, int mes, int ano) {
+        this.dia = dia;
+        this.mes = mes;
+        this.ano = ano;
+    }
+
+
+    // Métodos getter e setter para dia
+    public int getDia() {
+        return dia;
+    }
+
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+
+    // Métodos getter e setter para mês
+    public int getMes() {
+        return mes;
+    }
+
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+
+    // Métodos getter e setter para ano
+    public int getAno() {
+        return ano;
+    }
+
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+
+    // Método para exibir a data no formato dia/mês/ano
+    public void exibeData() {
+        System.out.println(dia + "/" + mes + "/" + ano);
+    }
+}
+
+
+// Classe CadernoDeEnderecos
+class CadernoDeEnderecos {
+    private String nome;
+    private String telefone;
+    private String email;
+    private Data dataDeAniversario;
+    private String endereco;
+
+
+    // Construtor da classe CadernoDeEnderecos
+    public CadernoDeEnderecos(String nome, String telefone, String email, Data dataDeAniversario, String endereco) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.dataDeAniversario = dataDeAniversario;
+        this.endereco = endereco;
+    }
+
+
+    // Métodos getter e setter para nome
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    // Métodos getter e setter para telefone
+    public String getTelefone() {
+        return telefone;
+    }
+
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+
+    // Métodos getter e setter para email
+    public String getEmail() {
+        return email;
+    }
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    // Métodos getter e setter para data de aniversário
+    public Data getDataDeAniversario() {
+        return dataDeAniversario;
+    }
+
+
+    public void setDataDeAniversario(Data dataDeAniversario) {
+        this.dataDeAniversario = dataDeAniversario;
+    }
+
+
+    // Métodos getter e setter para endereço
+    public String getEndereco() {
+        return endereco;
+    }
+
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+
+    // Método para exibir informações da pessoa
+    public void exibeInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Email: " + email);
+        System.out.print("Data de Aniversário: ");
+        dataDeAniversario.exibeData();
+        System.out.println("Endereço: " + endereco);
+    }
+}
+
+
+
+
+Classe CadernoDeEnderecosTeste
+
+
+// Classe CadernoDeEnderecosTeste para demonstrar as capacidades da classe CadernoDeEnderecos
+public class CadernoDeEnderecosTeste {
+    public static void main(String[] args) {
+        // Criando um objeto da classe Data
+        Data aniversario = new Data(15, 5, 1990);
+
+
+        // Criando um objeto da classe CadernoDeEnderecos
+        CadernoDeEnderecos pessoa = new CadernoDeEnderecos("João Silva", "1234-5678", "joao.silva@example.com", aniversario, "Rua das Flores, 123");
+
+
+        // Exibindo as informações da pessoa
+        System.out.println("Informações da Pessoa:");
+        pessoa.exibeInformacoes();
+
+
+        // Alterando os valores dos atributos
+        pessoa.setNome("Maria Oliveira");
+        pessoa.setTelefone("8765-4321");
+        pessoa.setEmail("maria.oliveira@example.com");
+        pessoa.setEndereco("Avenida Brasil, 456");
+
+
+        // Criando um novo objeto da classe Data para o novo aniversário
+        Data novoAniversario = new Data(20, 12, 1985);
+        pessoa.setDataDeAniversario(novoAniversario);
+
+
+        // Exibindo as informações alteradas da pessoa
+        System.out.println("\nInformações Alteradas da Pessoa:");
+        pessoa.exibeInformacoes();
+    }
+}
