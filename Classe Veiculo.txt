@@ -1,0 +1,142 @@
+﻿// Classe Veículo
+class Veiculo {
+    private String cor;
+    private int potencia;
+    private int anoFabricacao;
+    private double valor;
+
+
+    // Construtor da classe Veículo
+    public Veiculo(String cor, int potencia, int anoFabricacao, double valor) {
+        this.cor = cor;
+        this.potencia = potencia;
+        this.anoFabricacao = anoFabricacao;
+        this.valor = valor;
+    }
+
+
+    // Métodos getter e setter para os atributos
+    public String getCor() {
+        return cor;
+    }
+
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+
+    public int getPotencia() {
+        return potencia;
+    }
+
+
+    public void setPotencia(int potencia) {
+        this.potencia = potencia;
+    }
+
+
+    public int getAnoFabricacao() {
+        return anoFabricacao;
+    }
+
+
+    public void setAnoFabricacao(int anoFabricacao) {
+        this.anoFabricacao = anoFabricacao;
+    }
+
+
+    public double getValor() {
+        return valor;
+    }
+
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+
+    // Método para exibir informações do veículo
+    public void exibirInformacoes() {
+        System.out.println("Cor: " + cor);
+        System.out.println("Potência: " + potencia + " cv");
+        System.out.println("Ano de Fabricação: " + anoFabricacao);
+        System.out.println("Valor: R$ " + valor);
+    }
+}
+
+
+// Classe Motocicleta que herda de Veículo
+class Motocicleta extends Veiculo {
+    private boolean possuiPartidaEletrica;
+
+
+    // Construtor da classe Motocicleta
+    public Motocicleta(String cor, int potencia, int anoFabricacao, double valor, boolean possuiPartidaEletrica) {
+        super(cor, potencia, anoFabricacao, valor);
+        this.possuiPartidaEletrica = possuiPartidaEletrica;
+    }
+
+
+    // Método getter e setter para o atributo específico
+    public boolean isPossuiPartidaEletrica() {
+        return possuiPartidaEletrica;
+    }
+
+
+    public void setPossuiPartidaEletrica(boolean possuiPartidaEletrica) {
+        this.possuiPartidaEletrica = possuiPartidaEletrica;
+    }
+
+
+    // Método para exibir informações da motocicleta
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("Possui Partida Elétrica: " + (possuiPartidaEletrica ? "Sim" : "Não"));
+    }
+}
+
+
+// Classe Carro que herda de Veículo
+class Carro extends Veiculo {
+    private int numeroDePortas;
+
+
+    // Construtor da classe Carro
+    public Carro(String cor, int potencia, int anoFabricacao, double valor, int numeroDePortas) {
+        super(cor, potencia, anoFabricacao, valor);
+        this.numeroDePortas = numeroDePortas;
+    }
+
+
+    // Método getter e setter para o atributo específico
+    public int getNumeroDePortas() {
+        return numeroDePortas;
+    }
+
+
+    public void setNumeroDePortas(int numeroDePortas) {
+        this.numeroDePortas = numeroDePortas;
+    }
+
+
+    // Método para exibir informações do carro
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("Número de Portas: " + numeroDePortas);
+    }
+}
+
+
+// Classe Caminhão que herda de Veículo
+class Caminhao extends Veiculo {
+    private double capacidadeDeCarga;
+
+
+    // Construtor da classe Caminhão
+    public Caminhao(String cor, int potencia, int anoFabricacao, double valor, double capacidadeDeCarga) {
+        super(cor, potencia, anoFabricacao, valor);
+        this.capacidadeDeCarga = capacidadeDeCarga;
+    }

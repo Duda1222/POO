@@ -1,0 +1,64 @@
+﻿// Classe Calculadora
+class Calculadora {
+    // Método para soma
+    public double soma(double a, double b) {
+        return a + b;
+    }
+
+
+    // Método para subtração
+    public double subtracao(double a, double b) {
+        return a - b;
+    }
+
+
+    // Método para multiplicação
+    public double multiplicacao(double a, double b) {
+        return a * b;
+    }
+
+
+    // Método para divisão
+    public double divisao(double a, double b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Divisão por zero não é permitida");
+        }
+        return a / b;
+    }
+}
+
+
+// Classe CalculadoraCompleta
+class CalculadoraCompleta extends Calculadora {
+    // Método para calcular a raiz quadrada
+    public double raizQuadrada(double a) {
+        if (a < 0) {
+            throw new IllegalArgumentException("Número negativo não tem raiz quadrada real");
+        }
+        return Math.sqrt(a);
+    }
+
+
+    // Método para calcular a potência ao quadrado
+    public double potenciaAoQuadrado(double a) {
+        return Math.pow(a, 2);
+    }
+}
+
+
+// Classe para testar as classes Calculadora e CalculadoraCompleta
+public class Main {
+    public static void main(String[] args) {
+        // Criando um objeto da classe Calculadora
+        Calculadora calc = new Calculadora();
+        System.out.println("Soma: " + calc.soma(10, 5));
+        System.out.println("Subtração: " + calc.subtracao(10, 5));
+        System.out.println("Multiplicação: " + calc.multiplicacao(10, 5));
+        System.out.println("Divisão: " + calc.divisao(10, 5));
+        
+        // Criando um objeto da classe CalculadoraCompleta
+        CalculadoraCompleta calcCompleta = new CalculadoraCompleta();
+        System.out.println("Raiz Quadrada: " + calcCompleta.raizQuadrada(16));
+        System.out.println("Potência ao Quadrado: " + calcCompleta.potenciaAoQuadrado(4));
+    }
+}
