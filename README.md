@@ -7,6 +7,8 @@ Este repositório foi criado na intenção de organizar e documentar o que foi a
 
  ## Ferramentas utilizadas na matéria
  
-🍄IDE - https://netbeans.apache.org/front/main/index.html ou https://www.jetbrains.com/idea/
+🍄IDE - https://netbeans.apache.org/front/main/index.html 
 
 🍄Java - https://www.oracle.com/technetwork/java/javase/downloads
+
+## Projetos
